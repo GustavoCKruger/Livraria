@@ -3,6 +3,7 @@ from .categoria import Categoria
 from .editora import Editora
 from .autor import Autor
 
+
 class Livro(models.Model):
     titulo = models.CharField(max_length=255)
     isbn = models.CharField(max_length=32, null=True, blank=True)
@@ -14,10 +15,6 @@ class Livro(models.Model):
     editora = models.ForeignKey(
         Editora, on_delete=models.PROTECT, related_name="livros", null=True, blank=True
     )
-    autor = models.ForeignKey(
-        Autor, on_delete=models.PROTECT, related_name="livros", null=True, blank=True
-    )
-
 
     def __str__(self):
         return f"({self.id}) {self.titulo} ({self.quantidade})"
