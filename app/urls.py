@@ -11,6 +11,7 @@ from rest_framework.routers import DefaultRouter
 from uploader.router import router as uploader_router
 
 from core.views import AutorViewSet, CategoriaViewSet, EditoraViewSet, LivroViewSet, UserViewSet
+from uploader.views import ImageUploadViewSet
 
 router = DefaultRouter()
 
@@ -19,6 +20,7 @@ router.register(r'categorias', CategoriaViewSet, basename='categorias')
 router.register(r"editoras", EditoraViewSet)
 router.register(r'livros', LivroViewSet, basename='livros')
 router.register(r'usuarios', UserViewSet, basename='usuarios')
+router.register(r'upload', ImageUploadViewSet, basename='upload')
 
 
 urlpatterns = [
