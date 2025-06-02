@@ -54,7 +54,7 @@ class UserAdmin(BaseUserAdmin):
 @admin.register(Livro)
 class LivroAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'categoria', 'editora',)
-    search_fields = ('titulo', 'categoria_descricao', 'editora_nome',)
+    search_fields = ('titulo', 'categoria__descricao', 'editora__nome',)
     list_filter = ('editora', 'categoria')
     ordering = ('titulo', 'editora', 'categoria')
     list_per_page = 10
