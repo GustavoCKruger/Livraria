@@ -15,8 +15,8 @@ class ItensCompraCreateUpdateSerializer(ModelSerializer):
         fields = ('livro', 'quantidade')
 
 class CompraCreateUpdateSerializer(ModelSerializer):
-    itens = ItensCompraCreateUpdateSerializer(many=True)
     usuario = HiddenField(default=CurrentUserDefault())
+    itens = ItensCompraCreateUpdateSerializer(many=True)
 
     class Meta:
         model = Compra
