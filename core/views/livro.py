@@ -6,11 +6,11 @@ from core.serializers import LivroListSerializer, LivroRetrieveSerializer, Livro
 
 class LivroViewSet(ModelViewSet):
     queryset = Livro.objects.all()
-    serializer_class = LivroSerializer
+    # serializer_class = LivroSerializer
 
     def get_serializer_class(self):
-        if self.action == "list":
+        if self.action == 'list':
             return LivroListSerializer
-        elif self.action == "retrieve":
+        elif self.action == 'retrieve':
             return LivroRetrieveSerializer
         return LivroSerializer

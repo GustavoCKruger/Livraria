@@ -55,7 +55,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     )
     foto = models.ForeignKey(
         Image,
-        related_name="+",
+        related_name='+',
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
